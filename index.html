@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cabinet Jaubert · Assistant juridique IA</title>
+<meta name="description" content="Assistant juridique augmenté par l'intelligence artificielle — confidentiel, hébergé sur serveur dédié.">
+<style>
+  :root{--ink:#11131a;--mut:#6b7280;--line:#e7e7ee;--acc:#1f3a8a;--acc2:#3454c4;--bg:#fbfbfd}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  header{padding:26px 0;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-weight:700;letter-spacing:.2px;font-size:17px}
+  .brand .dot{color:var(--acc2)}
+  .badge{font-size:12px;color:var(--acc);background:#eef1fb;border:1px solid #dbe2fb;padding:5px 11px;border-radius:999px;font-weight:600}
+  .hero{padding:78px 0 60px;text-align:center}
+  .hero .eyebrow{color:var(--acc2);font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:12.5px;margin-bottom:18px}
+  .hero h1{font-size:clamp(34px,6vw,56px);line-height:1.08;margin:0 0 18px;letter-spacing:-.02em;font-weight:700}
+  .hero p.lead{font-size:clamp(17px,2.4vw,20px);color:var(--mut);max-width:620px;margin:0 auto 30px}
+  .cta{display:inline-flex;gap:10px;align-items:center;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;padding:13px 24px;border-radius:12px;font-size:15px;transition:.2s}
+  .cta:hover{background:var(--acc2);transform:translateY(-1px)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:30px 0 20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card .ic{font-size:24px}
+  .card h3{margin:12px 0 6px;font-size:16.5px}
+  .card p{margin:0;color:var(--mut);font-size:14px}
+  .strip{margin:38px 0;padding:26px;background:#fff;border:1px solid var(--line);border-radius:16px;display:flex;gap:14px;align-items:flex-start}
+  .strip .lock{font-size:22px}
+  .strip h3{margin:0 0 4px;font-size:16px}
+  .strip p{margin:0;color:var(--mut);font-size:14px}
+  footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 50px;color:var(--mut);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--acc2);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Cabinet&nbsp;Jaubert<span class="dot">.</span></div>
+    <span class="badge">Prototype privé</span>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Assistant juridique · Intelligence artificielle</div>
+    <h1>Votre cabinet, augmenté par l'IA.</h1>
+    <p class="lead">Un assistant intelligent dédié à votre pratique — rédaction, recherche
+      et gestion du quotidien — entraîné sur vos dossiers, et entièrement confidentiel.</p>
+    <a class="cta" href="#contact">En savoir plus →</a>
+  </section>
+
+  <section class="grid">
+    <div class="card"><div class="ic">📝</div><h3>Rédaction d'actes</h3>
+      <p>Premiers jets de courriers, conclusions et contrats, dans votre style, prêts à relire.</p></div>
+    <div class="card"><div class="ic">🔎</div><h3>Recherche juridique</h3>
+      <p>Synthèses rapides de textes, jurisprudence et pièces de vos dossiers.</p></div>
+    <div class="card"><div class="ic">✉️</div><h3>Gestion des emails</h3>
+      <p>Tri, résumés et brouillons de réponses — vous validez, l'assistant exécute.</p></div>
+    <div class="card"><div class="ic">📂</div><h3>Vos dossiers</h3>
+      <p>L'assistant lit et organise vos documents pour répondre avec précision.</p></div>
+  </section>
+
+  <section class="strip">
+    <div class="lock">🔒</div>
+    <div>
+      <h3>Confidentialité absolue</h3>
+      <p>Toutes vos données restent sur un serveur privé qui vous est dédié. Rien n'est partagé,
+        rien ne quitte votre infrastructure — le secret professionnel est préservé de bout en bout.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div>© <span id="y"></span> Cabinet Jaubert — Prototype confidentiel</div>
+    <div>Propulsé par <a href="https://ushaia.com">USHAIA</a> · IA pour cabinets d'avocats</div>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
