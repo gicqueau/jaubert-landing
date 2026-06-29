@@ -34,10 +34,16 @@
   .cta{display:inline-flex;gap:10px;align-items:center;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;padding:13px 24px;border-radius:12px;font-size:15px;transition:.2s}
   .cta:hover{background:var(--acc2);transform:translateY(-1px)}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;padding:30px 0 20px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:block;text-decoration:none;color:inherit;transition:.2s}
+  a.card:hover{border-color:var(--acc2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(17,19,26,.08)}
   .card .ic{font-size:24px}
-  .card h3{margin:12px 0 6px;font-size:16.5px}
+  .card h3{margin:12px 0 6px;font-size:16.5px;color:var(--ink)}
   .card p{margin:0;color:var(--mut);font-size:14px}
+  .proj{margin:40px 0;padding-top:8px}
+  .proj .ab-eyebrow{color:var(--acc2);font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+  .proj h2{font-size:22px;margin:0 0 12px;letter-spacing:-.01em}
+  .proj p{margin:0 0 10px;color:var(--mut);font-size:15px;line-height:1.65;max-width:680px}
+  .proj .tag{display:inline-block;font-size:12px;color:var(--acc);background:#eef1fb;border:1px solid #dbe2fb;padding:4px 10px;border-radius:999px;font-weight:600;margin-top:4px}
   .strip{margin:38px 0;padding:26px;background:#fff;border:1px solid var(--line);border-radius:16px;display:flex;gap:14px;align-items:flex-start}
   .strip .lock{font-size:22px}
   .strip h3{margin:0 0 4px;font-size:16px}
@@ -77,15 +83,38 @@
     </figure>
   </section>
 
-  <section class="grid">
-    <div class="card"><div class="ic">📝</div><h3>Rédaction d'actes</h3>
-      <p>Premiers jets de courriers, conclusions et contrats, dans votre style, prêts à relire.</p></div>
-    <div class="card"><div class="ic">🔎</div><h3>Recherche juridique</h3>
-      <p>Synthèses rapides de textes, jurisprudence et pièces de vos dossiers.</p></div>
-    <div class="card"><div class="ic">✉️</div><h3>Gestion des emails</h3>
-      <p>Tri, résumés et brouillons de réponses — vous validez, l'assistant exécute.</p></div>
-    <div class="card"><div class="ic">📂</div><h3>Vos dossiers</h3>
-      <p>L'assistant lit et organise vos documents pour répondre avec précision.</p></div>
+  <section class="grid" id="projets">
+    <a class="card" href="#bordereau">
+      <div class="ic">📑</div><h3>Bordereau de pièces à communiquer</h3>
+      <p>Génération du bordereau de communication : numérotation, intitulés normalisés et
+        export prêt à signifier.</p></a>
+    <a class="card" href="#analyse">
+      <div class="ic">⚖️</div><h3>Analyse juridique</h3>
+      <p>Synthèse des dossiers : faits, moyens, jurisprudence applicable et points de vigilance.</p></a>
+    <a class="card" href="http://jaubert-website.ushaia.com/" target="_blank" rel="noopener">
+      <div class="ic">🌐</div><h3>Site web</h3>
+      <p>Le site vitrine du cabinet, dédié à la réparation du préjudice corporel.</p></a>
+  </section>
+
+  <section class="proj" id="bordereau">
+    <div class="ab-eyebrow">Projet · Procédure</div>
+    <h2>📑 Bordereau de pièces à communiquer</h2>
+    <p>À partir des pièces du dossier, l'assistant prépare le bordereau de communication :
+      numérotation continue, intitulés normalisés et regroupement par catégorie. Le document
+      est restitué dans un format prêt à être relu, finalisé et signifié à la partie adverse.</p>
+    <p>L'avocat garde la main : chaque pièce est proposée, vous validez l'ordre et les intitulés
+      avant édition.</p>
+    <span class="tag">Prototype en cours</span>
+  </section>
+
+  <section class="proj" id="analyse">
+    <div class="ab-eyebrow">Projet · Fond du dossier</div>
+    <h2>⚖️ Analyse juridique</h2>
+    <p>L'assistant lit les pièces et produit une première synthèse du dossier : exposé des faits,
+      moyens envisageables, jurisprudence et textes applicables, et points de vigilance à
+      instruire. Un point de départ pour vos conclusions, jamais un substitut à votre analyse.</p>
+    <p>Tout reste confidentiel et hébergé sur votre serveur dédié.</p>
+    <span class="tag">Prototype en cours</span>
   </section>
 
   <section class="about">
