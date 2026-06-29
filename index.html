@@ -16,6 +16,11 @@
   .brand{font-weight:700;letter-spacing:.2px;font-size:17px}
   .brand .dot{color:var(--acc2)}
   .badge{font-size:12px;color:var(--acc);background:#eef1fb;border:1px solid #dbe2fb;padding:5px 11px;border-radius:999px;font-weight:600}
+  .topnav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .topnav a{font-size:13.5px;font-weight:600;text-decoration:none;color:var(--ink);padding:8px 13px;border-radius:9px;border:1px solid var(--line);transition:.2s;white-space:nowrap}
+  .topnav a:hover{border-color:var(--acc2);color:var(--acc)}
+  .topnav a.chat{background:var(--acc);color:#fff;border-color:var(--acc)}
+  .topnav a.chat:hover{background:var(--acc2)}
   .hero{padding:78px 0 60px;text-align:center}
   .hero .eyebrow{color:var(--acc2);font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:12.5px;margin-bottom:18px}
   .hero h1{font-size:clamp(34px,6vw,56px);line-height:1.08;margin:0 0 18px;letter-spacing:-.02em;font-weight:700}
@@ -39,7 +44,10 @@
 <div class="wrap">
   <header>
     <div class="brand">Cabinet&nbsp;Jaubert<span class="dot">,</span> avocat à la Cour</div>
-    <span class="badge">Prototype privé</span>
+    <nav class="topnav">
+      <a href="https://jaubert-auth.ushaia.com" target="_blank" rel="noopener">🔑 Connexions</a>
+      <a class="chat" href="https://pat-jaubert.ushaia.com" target="_blank" rel="noopener">🤖 Assistant</a>
+    </nav>
   </header>
 
   <section class="hero">
