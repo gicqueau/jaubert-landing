@@ -42,6 +42,12 @@
   .strip .lock{font-size:22px}
   .strip h3{margin:0 0 4px;font-size:16px}
   .strip p{margin:0;color:var(--mut);font-size:14px}
+  .about{display:flex;gap:34px;align-items:center;margin:46px 0 8px}
+  .about img{flex:0 0 230px;width:230px;border-radius:16px;box-shadow:0 14px 40px rgba(17,19,26,.15)}
+  .about .ab-eyebrow{color:var(--acc2);font-weight:600;letter-spacing:.5px;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+  .about h2{font-size:22px;margin:0 0 12px;letter-spacing:-.01em}
+  .about p{margin:0 0 10px;color:var(--mut);font-size:15px;line-height:1.65}
+  @media(max-width:680px){.about{flex-direction:column;text-align:center}.about img{flex:0 0 auto;width:180px}}
   footer{border-top:1px solid var(--line);margin-top:50px;padding:26px 0 50px;color:var(--mut);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   footer a{color:var(--acc2);text-decoration:none}
 </style>
@@ -80,6 +86,19 @@
       <p>Tri, résumés et brouillons de réponses — vous validez, l'assistant exécute.</p></div>
     <div class="card"><div class="ic">📂</div><h3>Vos dossiers</h3>
       <p>L'assistant lit et organise vos documents pour répondre avec précision.</p></div>
+  </section>
+
+  <section class="about">
+    <img src="img/didier-desk.jpg" alt="Maître Didier Jaubert à son cabinet">
+    <div>
+      <div class="ab-eyebrow">Le cabinet</div>
+      <h2>Maître Didier Jaubert</h2>
+      <p>Avocat à la Cour à Paris, Maître Jaubert met l'intelligence artificielle au service
+        d'une pratique exigeante — pour alléger l'administratif et se consacrer à l'essentiel :
+        ses clients et leurs dossiers.</p>
+      <p>Son assistant, dédié et confidentiel, l'épaule au quotidien dans la rédaction,
+        la recherche juridique et la gestion de son cabinet.</p>
+    </div>
   </section>
 
   <section class="strip">
