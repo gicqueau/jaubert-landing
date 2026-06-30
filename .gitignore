@@ -1,0 +1,11 @@
+# Server-side apps run on the VPS — keep them OUT of this public Pages repo
+secrets/
+__pycache__/
+*.pyc
+auth_app.py
+chat_app.py
+analyse_juridique.py
+index_mail.py
+index_dossiers.py
+legifrance.py
+export_to_gdoc.py
