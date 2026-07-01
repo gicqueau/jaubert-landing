@@ -140,6 +140,69 @@
   </style>
 </head>
 <body>
+  <!-- ===== Porte d'accès (verrou léger, mémorise l'appareil via localStorage) ===== -->
+  <div id="gate">
+    <form id="gateForm" autocomplete="on">
+      <div class="gate-card">
+        <div class="gate-brand">Cabinet <b>Jaubert</b></div>
+        <div class="gate-title">Accès réservé</div>
+        <p class="gate-desc">Cet espace est privé. Saisissez le mot de passe pour continuer.</p>
+        <input id="gatePw" type="password" placeholder="Mot de passe" autocomplete="current-password" autofocus>
+        <label class="gate-remember"><input id="gateRemember" type="checkbox" checked> Se souvenir de cet appareil</label>
+        <button type="submit">Entrer</button>
+        <div id="gateErr" class="gate-err" role="alert"></div>
+      </div>
+    </form>
+  </div>
+  <style>
+    #gate{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,#0f1b3d,#1f3a8a 60%,#3454c4);padding:24px;
+      font-family:-apple-system,"Segoe UI",Arial,sans-serif}
+    #gate.hidden{display:none}
+    #gate .gate-card{background:#fff;border-radius:18px;padding:34px 30px;max-width:360px;width:100%;
+      box-shadow:0 30px 80px rgba(0,0,0,.35);text-align:center}
+    #gate .gate-brand{font-size:15px;font-weight:600;color:#1f3a8a;letter-spacing:.02em;margin-bottom:18px}
+    #gate .gate-brand b{color:#3454c4}
+    #gate .gate-title{font-size:22px;font-weight:800;color:#11131a;letter-spacing:-.02em}
+    #gate .gate-desc{font-size:13.5px;color:#6b7280;margin:8px 0 20px;line-height:1.5}
+    #gate input[type=password]{width:100%;padding:13px 14px;border:1px solid #e2e4ee;border-radius:11px;
+      font-size:15px;outline:none;font-family:inherit}
+    #gate input[type=password]:focus{border-color:#3454c4;box-shadow:0 0 0 3px rgba(52,84,196,.15)}
+    #gate .gate-remember{display:flex;align-items:center;gap:8px;justify-content:center;font-size:12.5px;
+      color:#6b7280;margin:14px 0 18px;cursor:pointer}
+    #gate button{width:100%;padding:13px;border:0;border-radius:11px;background:#1f3a8a;color:#fff;
+      font-weight:700;font-size:15px;cursor:pointer;transition:background .15s}
+    #gate button:hover{background:#3454c4}
+    #gate .gate-err{color:#d23b30;font-size:13px;margin-top:12px;min-height:16px}
+    html.gate-locked{overflow:hidden}
+  </style>
+  <script>
+    (function(){
+      var HASH="193de599e3b14821d1963ef5ed0717adf510e5237634a80f326afcc4b3796509";
+      var KEY="jbrGateOK";
+      var gate=document.getElementById("gate");
+      document.documentElement.classList.add("gate-locked");
+      function open(){gate.classList.add("hidden");document.documentElement.classList.remove("gate-locked");}
+      try{ if(localStorage.getItem(KEY)===HASH||sessionStorage.getItem(KEY)===HASH){open();return;} }catch(e){}
+      async function sha256(s){
+        var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));
+        return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,"0")}).join("");
+      }
+      document.getElementById("gateForm").addEventListener("submit",async function(e){
+        e.preventDefault();
+        var err=document.getElementById("gateErr");
+        try{
+          var h=await sha256(document.getElementById("gatePw").value);
+          if(h===HASH){
+            var remember=document.getElementById("gateRemember").checked;
+            try{(remember?localStorage:sessionStorage).setItem(KEY,HASH);}catch(e){}
+            open();
+          }else{ err.textContent="Mot de passe incorrect."; document.getElementById("gatePw").value=""; }
+        }catch(ex){ err.textContent="Erreur : ouvrez la page en HTTPS."; }
+      });
+    })();
+  </script>
+  <!-- ===== fin porte ===== -->
   <nav>
     <a href="/" class="nav-logo">Cabinet&nbsp;Jaubert<span> · projets</span></a>
     <div class="nav-right">
