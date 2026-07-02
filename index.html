@@ -314,7 +314,7 @@
       { type:'branch', id:'donnees', name:'Données & indexation', tag:'DONNEES', desc:"Les index locaux qui donnent à l'assistant la mémoire des courriers et des pièces — entièrement sur le serveur du cabinet.", children:[
         {type:'project',code:'JAUBERT-MAIL'}, {type:'project',code:'JAUBERT-DOSSIERS'} ] },
       { type:'branch', id:'plateforme', name:'Plateforme & accès', tag:'PLATEFORME', desc:"L'assistant, les accès et la présence web du cabinet.", children:[
-        {type:'project',code:'JAUBERT-CHAT'}, {type:'project',code:'JAUBERT-AUTH'}, {type:'project',code:'JAUBERT-WEB'}, {type:'project',code:'JAUBERT-HUB'} ] }
+        {type:'project',code:'JAUBERT-CHAT'}, {type:'project',code:'JAUBERT-AUTH'}, {type:'project',code:'JAUBERT-WEB'}, {type:'project',code:'JAUBERT-HUB'}, {type:'project',code:'JAUBERT-TELOS'} ] }
     ],
     projects: {
       'JAUBERT-ANALYSE':   { name:'Analyse juridique (multi-modèle)', icon:'⚖️', status:'Actif', statusType:'active', url:null, desc:"Pipeline d'analyse : Claude rédige une note → un critique la relit → Claude révise, en boucle jusqu'à validation. S'appuie sur les pièces du dossier indexées localement ; export en Google Doc.", tech:['Claude Opus','GPT-5.5-pro','chromadb','fastembed'] },
@@ -325,7 +325,8 @@
       'JAUBERT-CHAT':      { name:'Assistant Pat (cabinet)', icon:'🤖', status:'En ligne', statusType:'live', url:'https://pat-jaubert.ushaia.com', desc:"L'assistant conversationnel du cabinet, sur serveur dédié — interroge les courriers et dossiers indexés, et lance les outils juridiques.", tech:['Claude','Flask','VPS dédié'] },
       'JAUBERT-AUTH':      { name:'Connexions (accès & identifiants)', icon:'🔑', status:'En ligne', statusType:'live', url:'https://jaubert-auth.ushaia.com', desc:"Gestionnaire d'identifiants du cabinet : e-mail pro, Gmail, OVHcloud, Légifrance, Claude, OpenAI — chaque identifiant est vérifié au moment de l'enregistrement. Stockage chiffré, accès protégé par mot de passe.", tech:['Flask','IMAP','OVH API'] },
       'JAUBERT-WEB':       { name:'Site vitrine', icon:'🌐', status:'En ligne', statusType:'live', url:'https://jaubert-website.ushaia.com', desc:"Le site vitrine du cabinet — réparation du préjudice corporel, droit de la santé, côté victime.", tech:['HTML/CSS','GitHub Pages'] },
-      'JAUBERT-HUB':       { name:'Hub projets (cette page)', icon:'🗂️', status:'En ligne', statusType:'live', url:'https://jaubert.ushaia.com', desc:"Cet arbre vivant des projets du cabinet — cliquez un #CODE pour copier l'instruction de reprise de contexte avec Pat.", tech:['HTML/CSS/JS','GitHub Pages'] }
+      'JAUBERT-HUB':       { name:'Hub projets (cette page)', icon:'🗂️', status:'En ligne', statusType:'live', url:'https://jaubert.ushaia.com', desc:"Cet arbre vivant des projets du cabinet — cliquez un #CODE pour copier l'instruction de reprise de contexte avec Pat.", tech:['HTML/CSS/JS','GitHub Pages'] },
+      'JAUBERT-TELOS':     { name:'Telos — Profil stratégique', icon:'🧭', status:'Actif', statusType:'active', url:null, desc:"Profil stratégique de Me Jaubert (Life OS) : identité, mission, réseau, valeurs, jalons. Construit par Pat à partir des sources indexées (emails, dossiers, presse). Fichiers dans jaubert-projects/jaubert-telos/ sur le serveur.", tech:['Claude','chromadb','markdown'] }
     }
   };
 
